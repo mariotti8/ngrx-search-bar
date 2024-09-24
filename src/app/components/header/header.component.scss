@@ -1,0 +1,17 @@
+:host {
+  display: block;
+}
+
+.header-container {
+  height: 50px;
+  background-color: rgb(142, 31, 31);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  .header-title {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 24px;
+    margin-left: 30px;
+  }
+}

@@ -1,0 +1,6 @@
+<div class="search-container" *ngIf="result$ | async as result">
+  <h1>Ricerca: {{result.name}}</h1>
+  <ul class="search-results-container">
+      <li *ngFor="let store of result.stores" class="result">{{ store }}</li>
+  </ul>
+</div> 

@@ -1,0 +1,11 @@
+<div class="page-container">
+  <h1>Effettua una ricerca</h1>
+  <div class="search-container">
+    <app-search-bar (emitSearchValue)="onInput($event)" />
+    <ul class="suggestions-container">
+      <ng-container *ngFor="let result of results$ | async">
+        <li class="suggestion" (click)="onSelectCategory(result.id)">{{ result.name }}</li>
+      </ng-container>
+    </ul>
+  </div>
+</div>

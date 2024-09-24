@@ -1,0 +1,21 @@
+:host {
+  display: block;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  flex-direction: column;
+  .search-results-container {
+    .result {
+      cursor: pointer;
+      &:hover {
+        font-weight: 900;
+        opacity: 1;
+      }
+      &:active {
+        opacity: .6;
+      }
+    }
+  }
+}

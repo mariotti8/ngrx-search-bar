@@ -1,0 +1,26 @@
+:host {
+  display: block;
+}
+.search-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  flex-direction: column;
+  
+  .suggestions-container {
+    border-radius: 8px;
+    border: 2px solid rgb(142, 31, 31) ;
+    transition: all 5s ease-in;
+    .suggestion {
+      cursor: pointer;
+      font-size: 20px;
+      &:hover {
+        font-weight: 900;
+        opacity: 1;
+      }
+      &:active {
+        opacity: .6;
+      }
+    }
+  }
+}
