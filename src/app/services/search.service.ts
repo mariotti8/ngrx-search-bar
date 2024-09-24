@@ -10,8 +10,7 @@ export class SearchService {
   constructor(private http: HttpClient) { }
 
   getSuggestions(query: string): Observable<Category[]> {
-    // const url = `/search?q=${query}`;
-    const result = category.filter(category => query && category.stores.some((a) => a.includes(query)))
+    const result = category.filter(category => query && category.stores.find((a) => a.toLowerCase().includes(query.toLowerCase())))
     return of(result);
   }
 
