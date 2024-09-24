@@ -11,7 +11,7 @@ export class SearchService {
 
   getSuggestions(query: string): Observable<Category[]> {
     // const url = `/search?q=${query}`;
-    const result = category.filter(category => query && category.name.toLowerCase().includes(query.toLowerCase()))
+    const result = category.filter(category => query && category.stores.some((a) => a.includes(query)))
     return of(result);
   }
 
