@@ -3,14 +3,15 @@ import { SuggestionsState } from '../state.model';
 
 export const selectSuggestionsState = createFeatureSelector<SuggestionsState>('suggestions');
 
-export const selectSuggestionResults = createSelector(
-  selectSuggestionsState,
-  (state: SuggestionsState) => state.results
-);
 
 export const selectSuggestionsQuery = createSelector(
   selectSuggestionsState,
   (state: SuggestionsState) => state.query
+);
+
+export const selectSuggestionResults = createSelector(
+  selectSuggestionsState,
+  (state: SuggestionsState) => state.results
 );
 
 export const selectSuggestionsError = createSelector(

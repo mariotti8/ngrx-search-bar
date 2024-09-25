@@ -6,9 +6,8 @@
 	display: grid;
 	grid-area: search;
 	grid-template:
-		"search" 60px
-		/ 420px;
-	//justify-content: center;
+		"search" 160px
+		/ 600px;
 	align-content: center;
 	justify-items: stretch;
 	align-items: stretch;
@@ -23,20 +22,19 @@
 	width: 100%;
 	height: 100%;
 	background: none;
-	padding: 0 30px 0 60px;
+	padding: 0 30px 0 70px;
 	border: none;
 	border-radius: 100px;
-	font: 24px/1 system-ui, sans-serif;
+	font: 26px/1 system-ui, sans-serif;
   outline-color: transparent;
-	outline-offset: -8px;
+	outline-offset: 20px;
   animation: search 3s 4s both;
 }
-
 
 #search svg {
 	grid-area: search;
 	overflow: visible;
-	color: rgb(142, 31, 31);
+	color: #d52b1e;
 	fill: none;
 	stroke: currentColor;
 }
@@ -105,74 +103,6 @@
 }
 
 
-
-
-.burst {
-	stroke-width: 3;
-}
-
-.burst :nth-child(2n) { color: #ff783e }
-.burst :nth-child(3n) { color: #ffab00 }
-.burst :nth-child(4n) { color: #55e214 }
-.burst :nth-child(5n) { color: #82d9f5 }
-
-.circle {
-	r: 6;
-}
-
-.rect {
-	width: 10px;
-	height: 10px;
-}
-
-.triangle {
-	d: path("M0,-6 L7,6 L-7,6 Z");
-	stroke-linejoin: round;
-}
-
-.plus {
-	d: path("M0,-5 L0,5 M-5,0L 5,0");
-	stroke-linecap: round;
-}
-
-
-
-
-.burst:nth-child(4) {
-	transform: translate(30px, 100%) rotate(150deg);
-}
-
-.burst:nth-child(5) {
-	transform: translate(50%, 0%) rotate(-20deg);
-}
-
-.burst:nth-child(6) {
-	transform: translate(100%, 50%) rotate(75deg);
-}
-
-.burst * {}
-
-@keyframes particle-fade {
-	0%, 100% { opacity: 0 }
-	5%, 80% { opacity: 1 }
-}
-
-.burst :nth-child(1) { animation: particle-fade 600ms 2.95s both, particle-one-move 600ms 2.95s both; }
-.burst :nth-child(2) { animation: particle-fade 600ms 2.95s both, particle-two-move 600ms 2.95s both; }
-.burst :nth-child(3) { animation: particle-fade 600ms 2.95s both, particle-three-move 600ms 2.95s both; }
-.burst :nth-child(4) { animation: particle-fade 600ms 2.95s both, particle-four-move 600ms 2.95s both; }
-.burst :nth-child(5) { animation: particle-fade 600ms 2.95s both, particle-five-move 600ms 2.95s both; }
-.burst :nth-child(6) { animation: particle-fade 600ms 2.95s both, particle-six-move 600ms 2.95s both; }
-
-@keyframes particle-one-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(-20deg) translateX(8%) scale(0.5, 0.5) } }
-@keyframes particle-two-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(0deg) translateX(8%) scale(0.5, 0.5) } }
-@keyframes particle-three-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(20deg) translateX(8%) scale(0.5, 0.5) } }
-@keyframes particle-four-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(-35deg) translateX(12%) } }
-@keyframes particle-five-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(0deg) translateX(12%) } }
-@keyframes particle-six-move { 0% { transform: rotate(0deg) translate(-5%) scale(0.0001, 0.0001) } 100% { transform: rotate(35deg) translateX(12%) } }
-
-
-
 .bar {
 	width: 100%;
 	height: 100%;
@@ -209,11 +139,4 @@
 	x2: 44;
 	y2: 44;
 	stroke-width: 3;
-}
-
-
-
-#results {
-	grid-area: results;
-	background: hsl(0, 0%, 95%);
 }

@@ -3,10 +3,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as SearchActions from './search.actions';
-import { switchMap, map, catchError, tap, filter } from 'rxjs/operators';
+import { switchMap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { SearchService } from '../../services/search.service';
-import { Router } from '@angular/router';
 
 @Injectable()
 export class SearchEffects {

@@ -22,33 +22,8 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
 			<circle class="spark"/>
 			<circle class="spark"/>
 		</g>
-
-		<g class="burst pattern-one">
-			<circle class="particle circle"/>
-			<path class="particle triangle"/>
-			<circle class="particle circle"/>
-			<path class="particle plus"/>
-			<rect class="particle rect"/>
-			<path class="particle triangle"/>
-		</g>
-		<g class="burst pattern-two">
-			<path class="particle plus"/>
-			<circle class="particle circle"/>
-			<path class="particle triangle"/>
-			<rect class="particle rect"/>
-			<circle class="particle circle"/>
-			<path class="particle plus"/>
-		</g>
-		<g class="burst pattern-three">
-			<circle class="particle circle"/>
-			<rect class="particle rect"/>
-			<path class="particle plus"/>
-			<path class="particle triangle"/>
-			<rect class="particle rect"/>
-			<path class="particle plus"/>
-		</g>
 	</svg>
-	<input (input)="onInput($event)" placeholder="Cerca..." type="search" aria-label="Search for inspiration"/>
+	<input (input)="onInput($event)" placeholder="Cerca..." type="search" />
 </div>
   `,
   styleUrl: './search-bar.component.scss',

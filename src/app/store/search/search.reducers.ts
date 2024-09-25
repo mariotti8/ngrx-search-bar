@@ -14,6 +14,7 @@ export const searchReducer = createReducer(
   on(SearchActions.searchSuccess, (state, { category }) => ({
     ...state,
     category,
+    error: null
   })),
   on(SearchActions.searchFailure, (state, { error }) => ({
     ...state,

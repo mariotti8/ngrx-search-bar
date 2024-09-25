@@ -1,11 +1,31 @@
 <div class="page-container">
   <h1>Effettua una ricerca</h1>
+  <div class="edenred-logo">
+    <img src="https://studiomedicom.it/wp-content/uploads/2019/09/Edenred.png" alt="" srcset="">
+  </div>
   <div class="search-container">
-    <app-search-bar (emitSearchValue)="onInput($event)" />
-    <ul class="suggestions-container">
-      <ng-container *ngFor="let result of results$ | async">
-        <li class="suggestion" (click)="onSelectCategory(result.id)">{{ result.name }}</li>
-      </ng-container>
-    </ul>
+    <div class="search-content">
+      <app-search-bar (emitSearchValue)="onInput($event)" />
+    </div>
+    <div class="suggestions-container" *ngIf="results$ | async as res">
+      <div class="stores-container">
+        <b *ngIf="res.stores.length">NEGOZI</b>
+        <ul class="suggestions-container">
+          <ng-container *ngFor="let store of res.stores">
+            <li class="suggestion">{{ store.name }}</li>
+          </ng-container>
+        </ul>
+      </div>
+      <div class="categories-container">
+        <b *ngIf="res.category.length">CATEGORIE</b>
+        <!-- <ul class="suggestions-container"> -->
+        <div class="categories-content">
+          <ng-container *ngFor="let category of res.category">
+            <p class="category-suggestion suggestion" (click)="onSelectCategory(category.id)">{{ category.name }}</p>
+          </ng-container>
+        </div>
+        <!-- </ul> -->
+      </div>
+    </div>
   </div>
 </div>

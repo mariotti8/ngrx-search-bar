@@ -1,7 +1,7 @@
 // src/app/store/actions/search.actions.ts
 
 import { createAction, props } from '@ngrx/store';
-import { Category } from '../../models/search.models';
+import { Category, Store } from '../../models/search.models';
 
 export const suggestions = createAction(
   '[Suggestions Component] Suggestions',
@@ -10,7 +10,7 @@ export const suggestions = createAction(
 
 export const suggestionsSuccess = createAction(
   '[Suggestions API] Suggestions Success',
-  props<{ results: Category[] }>()
+  props<{ category: Category[], stores: Store[]  }>()
 );
 
 export const suggestionsFailure = createAction(

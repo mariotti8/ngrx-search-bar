@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 import { AppState } from '../../store/state.model';
-import { Category } from '../../models/search.models';
+import { Category, Store as EdenredStore } from '../../models/search.models';
 import { suggestions } from '../../store/suggestions/suggestions.actions';
 import { selectSuggestionResults } from '../../store/suggestions/suggestions.selectors';
 import { Router } from '@angular/router';
@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SearchComponent {
-  results$: Observable<Category[] | undefined> = this.store.select(selectSuggestionResults);
+  results$: Observable<{ category: Category[], stores: EdenredStore[] } | undefined> = this.store.select(selectSuggestionResults);
   private searchSubject = new Subject<string>();
 
   constructor(
@@ -29,9 +29,12 @@ export class SearchComponent {
     });
   }
 
+  onSelectStore(categoryId: number, storeId: number) {
+    this.router.navigate(['/store-details'], { queryParams: { storeId, categoryId } })
+  }
+
   onSelectCategory(categoryId: number) {
     this.router.navigate(['/search-results'], { queryParams: { id: categoryId } })
-//    this.store.dispatch(search({ categoryId }));
   }
 
   onInput(event: Event): void {

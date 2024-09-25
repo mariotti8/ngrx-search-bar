@@ -5,10 +5,10 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchModule } from './pages/search/search.module';
-import { provideRouter, RouterModule, RouterOutlet } from '@angular/router';
+import { provideRouter, RouterOutlet } from '@angular/router';
 import { AppComponent } from './app.component';
 import { reducers } from './store/reducers';
-import { provideStoreDevtools, StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { SearchResultsModule } from './pages/search-results/search-results.module';
 import { appRoutes } from './app.routes';
 import { EffectsModule } from '@ngrx/effects';
@@ -26,10 +26,6 @@ import { HeaderComponent } from './components/header/header.component';
     HttpClientModule,
     StoreModule.forRoot(reducers),
     EffectsModule.forRoot([SuggestionsEffects, SearchEffects]),
-    /*StoreDevtoolsModule.instrument({
-      maxAge: 25,
-      logOnly: false,
-    }),*/
     SearchModule,
     SearchResultsModule,
     HeaderComponent

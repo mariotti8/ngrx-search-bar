@@ -4,7 +4,7 @@ import { SuggestionsState } from '../state.model';
 
 export const initialState: SuggestionsState = {
   query: '',
-  results: [],
+  results: { category: [], stores: [] },
   error: null,
 };
 
@@ -15,9 +15,10 @@ export const suggestionsReducer = createReducer(
     query,
     error: null,
   })),
-  on(SuggestionsActions.suggestionsSuccess, (state, { results }) => ({
+  on(SuggestionsActions.suggestionsSuccess, (state, { category, stores }) => ({
     ...state,
-    results,
+    results: { category, stores },
+    error: null
   })),
   on(SuggestionsActions.suggestionsFailure, (state, { error }) => ({
     ...state,
