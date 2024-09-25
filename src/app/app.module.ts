@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchModule } from './pages/search/search.module';
-import { provideRouter, RouterOutlet } from '@angular/router';
+import { provideRouter, RouterModule, RouterOutlet } from '@angular/router';
 import { AppComponent } from './app.component';
 import { reducers } from './store/reducers';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
@@ -28,7 +28,7 @@ import { HeaderComponent } from './components/header/header.component';
     EffectsModule.forRoot([SuggestionsEffects, SearchEffects]),
     SearchModule,
     SearchResultsModule,
-    HeaderComponent
+    HeaderComponent,
   ],
   providers: [
     provideRouter(appRoutes),
